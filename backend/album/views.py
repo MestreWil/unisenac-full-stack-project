@@ -13,3 +13,13 @@ def list_albums(request):
 
     return Response(data=albums_serializer.data, status=status.HTTP_200_OK)
 
+@api_view(['GET'])
+def get_album(request, pk):
+    try:
+        album = Album.objects.get(pk=pk)
+    except Album.DoesNotExist:
+        return Response({ "error": "Album not Found" }, status=status.HTTP_404_NOT_FOUND)
+    
+    album_serializer = AlbumSerializer(album)
+
+    return Response(album_serializer.data, status=status.HTTP_200_OK)
