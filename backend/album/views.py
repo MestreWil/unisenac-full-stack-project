@@ -36,3 +36,16 @@ def create_album(request):
         return Response(album_serializer.data, status=status.HTTP_200_OK)
     
     return Response(album_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def create_song(request):
+    song_request = JSONParser().parse(request)
+
+    song_serializer = MusicSerializer(data=song_request)
+
+    if song_serializer.is_valid():
+        song_serializer.save()
+
+        return Response(song_serializer.data, status=status.HTTP_200_OK)
+    
+    return Response(song_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
