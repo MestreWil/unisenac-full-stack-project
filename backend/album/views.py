@@ -23,3 +23,16 @@ def get_album(request, pk):
     album_serializer = AlbumSerializer(album)
 
     return Response(album_serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def create_album(request):
+    album_request = JSONParser().parse(request)
+
+    album_serializer = AlbumSerializer(data=album_request)
+
+    if album_serializer.is_valid():
+        album_serializer.save()
+
+        return Response(album_serializer.data, status=status.HTTP_200_OK)
+    
+    return Response(album_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
