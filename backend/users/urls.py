@@ -5,5 +5,7 @@ from . import views
 
 urlpatterns = [
      path('', views.get_all_user, name='get_all_users'),
+     path('<str:name>', views.get_by_name),
      path('new_user/', views.post_user),
+     path('auter_descrip/<str:name>', views.patch_user_description),
 ]

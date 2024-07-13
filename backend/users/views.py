@@ -20,6 +20,16 @@ def get_all_user(request):
      serializer = UserSerializer(user, many=True)
      return Response(serializer.data)
 
+@api_view(['GET'])
+def get_by_name(request, name):
+     try:
+          user = Users.objects.get(user_name=name)
+     except:
+          return Response(status=status.HTTP_404_NOT_FOUND)
+     
+     serializer = UserSerializer(user)
+     return Response(serializer.data)
+
 @api_view(['POST'])
 def post_user(request):
      new_user = request.data
@@ -31,11 +41,17 @@ def post_user(request):
      return Response(status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['PATCH'])
-def patch_user_description(request):
-     new_description = request.data
-     serielizer = UserSerializer(user_description = new_description)
+def patch_user_description(request, name):
+     try:
+          description = Users.objects.get(user_name=name)
+     except Users.DoesNotExist():
+          msg = {"msg": "User Not found"}
+          return Response(msg, status=status.HTTP_404_NOT_FOUND)
      
-     if serielizer.is_valid():
-          serielizer.save()
-          return Response(serielizer.data, status=status.HTTP_202_ACCEPTED)
-     return Response(status=status.HTTP_400_BAD_REQUEST)
+     serializer = UserSerializer(description, data=request.data, partial=True)
+     if serializer.is_valid():
+          serializer.save()
+          return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
+     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+     
+     
