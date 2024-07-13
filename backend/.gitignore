@@ -1,1 +1,4 @@
 /venv
+.env
+db.sqlite3
+album/__pycache__ core/__pycache__ gender/__pycache__ users/__pycache__
