@@ -53,5 +53,20 @@ def patch_user_description(request, name):
           serializer.save()
           return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
      return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PATCH'])
+def patch_user_image(request, name):
+     try:
+          image = Users.objects.get(user_image=name)
+     except Users.DoesNotExist():
+          msg = {"msg": "User Not found"}
+          return Response(msg, status=status.HTTP_404_NOT_FOUND)
      
+     serializer = UserSerializer(image, data=request.data, partial=True)
+     if serializer.is_valid():
+          serializer.save()
+          return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
+     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
      
