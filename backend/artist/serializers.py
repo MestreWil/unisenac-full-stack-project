@@ -7,3 +7,7 @@ class ArtistSerializers(serializers.ModelSerializer):
           model = Artist
           fields = '__all__'
      
+     def validate_name(self, value):
+        if Artist.objects.filter(artist_name=value).exists():
+            raise serializers.ValidationError("Artist already exists.")
+        return value

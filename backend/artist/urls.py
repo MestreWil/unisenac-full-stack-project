@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
      path('', views.get_all_artist, name='get_all'),
-     path('<str:name>', views.get_by_name)
+     path('<str:name>', views.get_by_name),
+     path('new_artist/', views.create_artist)
 ]
