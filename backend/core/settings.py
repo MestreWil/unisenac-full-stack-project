@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     "corsheaders",
     "gender",
-    "users"
+    "users",
+    "artist" 
 ]
 
 MIDDLEWARE = [

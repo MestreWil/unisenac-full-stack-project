@@ -32,13 +32,11 @@ def get_by_name(request, name):
 
 @api_view(['POST'])
 def post_user(request):
-     new_user = request.data
-     serializer = UserSerializer(data=new_user)
-     
+     serializer = UserSerializer(data=request.data)
      if serializer.is_valid():
-          serializer.save()
-          return Response(serializer.data, status=status.HTTP_201_CREATED)
-     return Response(status=status.HTTP_400_BAD_REQUEST)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['PATCH'])
 def patch_user_description(request, name):
