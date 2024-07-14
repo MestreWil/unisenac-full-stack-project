@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "gender",
     "users",
-    "artist" 
+    "artist",
+    "album" 
 ]
 
 MIDDLEWARE = [
