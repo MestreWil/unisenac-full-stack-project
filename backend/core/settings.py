@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     "gender",
     "users",
     "artist",
-    "album" 
+    "album",
+    "reviews" 
 ]
 
 MIDDLEWARE = [

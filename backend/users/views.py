@@ -6,8 +6,12 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .models import Users
-from .serializers import UserSerializer
 
+from reviews.models import Reviews
+
+from reviews.serializers import ReviewsSerializer
+
+from .serializers import UserSerializer
 import json
 
 @api_view(['GET'])
@@ -30,6 +34,17 @@ def get_by_name(request, name):
      serializer = UserSerializer(user)
      return Response(serializer.data)
 
+@api_view(['GET'])
+def get_reviews_user(request, username):
+     try:
+          user = Users.objects.get(user_name=username)
+          reviews = Reviews.objects.filter(review_user=user.user_id)
+          serializers = ReviewsSerializer(reviews, many=True)
+          return Response(serializers.data, status=status.HTTP_200_OK)
+     except Users.DoesNotExist:
+          return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+          
 @api_view(['POST'])
 def post_user(request):
      serializer = UserSerializer(data=request.data)
