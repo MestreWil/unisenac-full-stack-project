@@ -24,6 +24,8 @@ def get_all_albuns(request):
 def get_album(request, name):
      try:
           album = Album.objects.get(album_name=name)
+          reviews = Reviews.objects.filter(review_album=album.album_id)
+          album.reviews = reviews
      except:
           return Response(status=status.HTTP_404_NOT_FOUND)
      
