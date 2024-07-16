@@ -28,6 +28,8 @@ def get_all_user(request):
 def get_by_name(request, name):
      try:
           user = Users.objects.get(user_name=name)
+          reviews = Reviews.objects.filter(review_user=user.user_id)
+          user.reviews = reviews
      except:
           return Response(status=status.HTTP_404_NOT_FOUND)
      
