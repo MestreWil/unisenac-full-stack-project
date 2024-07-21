@@ -54,7 +54,7 @@ const AlbumsPage = ({ albums }) => {
                 <div class='grid-item'>
                   {album.album_image && (
                     <div id='album-image'>
-                      <a href ={`http://localhost:3000/album/${album.album_name}`}>
+                      <a href={`/album/${encodeURIComponent(album.album_name)}`}>
                         <img 
                           src={`../../backend/media${album.album_image}`}  
                         />
