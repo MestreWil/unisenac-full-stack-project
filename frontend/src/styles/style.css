@@ -1,0 +1,81 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    color: black;
+}
+
+svg{
+    display: inline-block;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: -3px;
+}
+
+svg:hover{
+    background-color: #d3d3d3;
+}
+
+#top-logo{
+    display: inline-block;
+    width: 13%;
+    height: auto;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    cursor: pointer;
+}
+
+#header{
+    display: block;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    border-bottom: 10px solid red;
+}
+
+#searchbar{
+    position: absolute;
+    top: 30px;
+    left: 35%;
+    height: fit-content;
+    width: fit-content;
+}
+
+#search-input{
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    top: -13px;
+    background-color: whitesmoke;
+    font-size: 18px;
+    color: #989898;
+    padding-top: 11px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 100px;
+    border: 0px;
+    border-radius: 5px;
+    border-right: 2px solid #CBCBCB;
+}
+
+.grid-container{
+    display: grid;
+    margin-top: 200px;
+}
+
+#album-image{
+    height: 100px;
+    width: 100px;
+}
