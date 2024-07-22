@@ -39,7 +39,7 @@ export const Header = () => {
     <header id='header'>
       <img id='top-logo' src='/Vector.png' alt="Logo" />
       <div id='searchbar'>
-        <input id='search-input' placeholder="What we gonna listen today?" />
+        <input id='search-input' placeholder="O que vamos ouvir hoje?" />
       </div>
     </header>
   );
@@ -69,13 +69,13 @@ const AlbumsPage = ({ albums }) => {
                 <div className='album-image'>
                   <a href={`/album/${encodeURIComponent(album.album_name)}`}>
                     <img 
-                      src={`http://localhost:8000/media${album.album_image}`}  
+                      src={`http://localhost:8000${album.album_image}`}  
                       alt={`Imagem do álbum ${album.album_name}`} 
                     />
                   </a>
                 </div>
               )}
-              <h2 className='album-title'>{album.album_name}</h2>
+              <h2 className='album-title'><a href={`/album/${encodeURIComponent(album.album_name)}`}>{album.album_name}</a></h2>
               <p className='album-artist'>{album.artist_name}</p> {/* Adicione o nome do artista aqui */}
             </div>
           ))}
