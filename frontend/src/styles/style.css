@@ -55,6 +55,18 @@ body {
     border-radius: 5px;
 }
 
+#user-icon-link {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    cursor: pointer;
+}
+
+#user-icon {
+    width: 50px;
+    height: 50px;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -117,6 +129,11 @@ body {
 
 .filter-button:hover {
     background-color: #ddd;
+}
+
+.filter-button a {
+    text-decoration: none;
+    color: black;
 }
 
 #topics {
@@ -250,4 +267,16 @@ hr{
 
 #yt-link:hover{
     background-color: rgb(182, 0, 0);
+}
+
+#artist-page-image img {
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+}
+
+#artist-page-title {
+    text-align: center;
+    margin-top: 30px;
 }

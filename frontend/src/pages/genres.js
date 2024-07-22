@@ -3,13 +3,13 @@ import React from 'react';
 // Função para buscar os dados
 export async function getStaticProps() {
   try {
-    const response = await fetch('http://localhost:8000/album/');
+    const response = await fetch('http://localhost:8000/genders/');
 
     if (!response.ok) {
       console.error(`HTTP error! status: ${response.status}`);
       return {
         props: {
-          albums: [],
+          genres: [],
         },
       };
     }
@@ -19,7 +19,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        albums: data,
+        genres: data,
       },
     };
   } catch (error) {
@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        albums: [],
+        genres: [],
       },
     };
   }
@@ -58,7 +58,7 @@ export const Header = () => {
 };
 
 // Componente da Página Principal
-const AlbumsPage = ({ albums }) => {
+const GenresPage = ({ genres }) => {
   return (
     <div id='corpo'>
       <Header />
@@ -68,27 +68,26 @@ const AlbumsPage = ({ albums }) => {
         <div className='filter-button'><a href='http://localhost:3000/genres'>Genres</a></div>
       </div>
       <div id='topics'>
-        <h2 className='topic'>New Albums</h2>
+        <h2 className='topic'>Genres</h2>
         <hr className='topic'></hr>
       </div>
-      {albums.length === 0 ? (
-        <p id="no-albums">Nenhum álbum encontrado.</p>
+      {genres.length === 0 ? (
+        <p id="no-albums">Nenhum gênero encontrado.</p>
       ) : (
         <div className='grid-container'>
-          {albums.map((album, index) => (
+          {genres.map((genre, index) => (
             <div className='grid-item' key={index}>
-              {album.album_image && (
+              {genre.gender_name && (
                 <div className='album-image'>
-                  <a href={`/album/${encodeURIComponent(album.album_name)}`}>
+                  <a href={`/genre/${encodeURIComponent(genre.gender_name)}`}>
                     <img 
-                      src={`http://localhost:8000${album.album_image}`}  
-                      alt={`Imagem do álbum ${album.album_name}`} 
+                      src='/rock.jpg'  
+                      alt={`Imagem do gênero ${genre.gender_name}`} 
                     />
                   </a>
                 </div>
               )}
-              <h2 className='album-title'><a href={`/album/${encodeURIComponent(album.album_name)}`}>{album.album_name}</a></h2>
-              <p className='album-artist'>{album.artist_name}</p> {/* Adicione o nome do artista aqui */}
+              <h2 className='album-title'><a href={`/genre/${encodeURIComponent(genre.gender_name)}`}>{genre.gender_name}</a></h2>
             </div>
           ))}
         </div>
@@ -97,4 +96,4 @@ const AlbumsPage = ({ albums }) => {
   );
 };
 
-export default AlbumsPage;
+export default GenresPage;

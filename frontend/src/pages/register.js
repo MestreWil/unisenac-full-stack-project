@@ -31,7 +31,7 @@ const UserForm = () => {
     formDataToSend.append('user_image', formData.user_image);
 
     try {
-      const response = await fetch('http://localhost:8000/new_user/', {
+      const response = await fetch('http://localhost:8000/users/new_user/', {
         method: 'POST',
         body: formDataToSend,
       });
@@ -61,7 +61,7 @@ const UserForm = () => {
             <h2 className={styles.formTitle}>Welcome to MusicRATE</h2>
             {message && <p>{message}</p>} {/* Mensagem de sucesso ou erro */}
             <div className={styles.formGroup}>
-              <label htmlFor="user_name">Name:</label>
+              <label htmlFor="user_name">Usuário:</label>
               <input
                 type="text"
                 id="user_name"
@@ -71,7 +71,7 @@ const UserForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="user_password">Password:</label>
+              <label htmlFor="user_password">Senha:</label>
               <input
                 type="password"
                 id="user_password"
@@ -91,7 +91,7 @@ const UserForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="user_description">Description:</label>
+              <label htmlFor="user_description">Biografia:</label>
               <textarea
                 id="user_description"
                 name="user_description"
@@ -100,7 +100,7 @@ const UserForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="user_image">Image:</label>
+              <label htmlFor="user_image">Imagem:</label>
               <input
                 type="file"
                 id="user_image"
@@ -108,6 +108,8 @@ const UserForm = () => {
                 onChange={handleChange}
               />
             </div>
+            <p>Já tem cadastro? <a className={styles.login} href='http://localhost:3000/login'>Faça Login</a></p>
+            <br />
             <button type="submit" className={styles.submitButton}>Register</button>
           </form>
         </div>

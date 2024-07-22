@@ -1,9 +1,9 @@
 import React from 'react';
 
 // Função para buscar os dados do álbum baseado no nome do álbum
-const fetchAlbumData = async (albumName) => {
+const fetchAlbumData = async (genreName) => {
   try {
-    const album = albumName.replace(' ', '%20');
+    const genre = genreName.replace(' ', '%20');
     const response = await fetch(`http://localhost:8000/album/${album}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -76,16 +76,8 @@ const AlbumPage = ({ album }) => {
           </form>
           <div id='reviews-list'>
             <div id='reviews-users'>
-              {album.reviews.length === 0 ? (
-                <p>Nenhuma review encontrada.</p>
-              ) : (
-                album.reviews.map((review, index) => (
-                  <div key={index}>
-                    <h3>Score: {review.review_sco}</h3>
-                    <p>{review.review_mes}</p>
-                  </div>
-                ))
-              )}
+              {/* Exemplo de reviews; pode ser substituído por dados reais no futuro */}
+              <p><strong>User1</strong><br /><br /> Great album!</p>
             </div>
           </div>
         </div>
