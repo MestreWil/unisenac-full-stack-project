@@ -1,29 +1,16 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
 }
 
-h2{
-    color: black;
-}
-
-svg{
-    display: inline-block;
-    cursor: pointer;
-    background-color: whitesmoke;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: -3px;
-}
-
-svg:hover{
-    background-color: #d3d3d3;
-}
-
-#top-logo{
+#top-logo {
     display: inline-block;
     width: 13%;
     height: auto;
@@ -33,49 +20,200 @@ svg:hover{
     cursor: pointer;
 }
 
-#header{
-    display: block;
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100px;
     width: 100%;
-    position: absolute;
+    position: fixed; /* Fixar o header no topo */
     top: 0;
     left: 0;
     background-color: black;
     border-bottom: 10px solid red;
+    z-index: 1000; /* Garante que o header fique acima do conteúdo */
 }
 
-#searchbar{
+#searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
     position: absolute;
-    top: 30px;
-    left: 35%;
-    height: fit-content;
-    width: fit-content;
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
 }
 
-#search-input{
-    display: inline-block;
-    height: fit-content;
-    width: fit-content;
-    position: relative;
-    top: -13px;
-    background-color: whitesmoke;
-    font-size: 18px;
-    color: #989898;
-    padding-top: 11px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-    padding-right: 100px;
-    border: 0px;
+#search-input {
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    padding: 11px 20px;
+    padding-right: 130px;
+    border: 0;
     border-radius: 5px;
-    border-right: 2px solid #CBCBCB;
 }
 
-.grid-container{
+.grid-container {
     display: grid;
-    margin-top: 200px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: auto;
+    margin-top: 120px; /* Ajusta o espaçamento para não sobrepor o header */
+    padding: 20px;
+    width: 84%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#album-image{
-    height: 100px;
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.album-image img {
     width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.album-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.album-artist {
+    font-size: 14px;
+    color: gray;
+}
+
+#filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 80px; /* Ajusta o espaçamento abaixo do header */
+}
+
+.filter-button {
+    margin-top: 100px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.filter-button:hover {
+    background-color: #ddd;
+}
+
+#topics {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-left: 150px;
+}
+
+.topic {
+    margin-top: 60px;
+}
+
+hr{
+    width: 80%;
+    border-top: 2px solid #ddd;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    bottom: -15px;
+}
+
+#content {
+    margin-top: 140px; /* Garante que o conteúdo não sobreponha o header */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#album-page-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+  
+#album-page-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+  
+#album-page-info {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#album-page-info p {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#album-page-info p strong {
+    font-size: 20px;
+    color: black;
+}
+
+#album-page-title {
+    font-size: 48px;
+}
+  
+#reviews {
+    margin-top: 100px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+#review-input {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none; /* Desabilita redimensionamento */
+}
+  
+#reviews-list p {
+    margin-bottom: 10px;
+}
+
+#yt-link{
+    font-size: 26px;
+    background-color: red;
+    width: 100%;
+    height: 100px;
+    padding: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+#yt-link:hover{
+    background-color: rgb(182, 0, 0);
+}
+
+#youtube {
+
 }
