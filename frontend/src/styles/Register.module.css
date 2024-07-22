@@ -1,0 +1,90 @@
+.background {
+    background: url('/background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+  
+.header {
+    width: 100%;
+    background-color: black;
+    border-bottom: 10px solid red;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+  
+.logo {
+    width: 13%;
+    height: auto;
+    cursor: pointer;
+}
+  
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 80px; /* Add padding to avoid overlap with fixed header */
+}
+  
+.form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+  
+.formTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+  
+.formGroup {
+    margin-bottom: 15px;
+}
+  
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+  
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.submitButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+.submitButton:hover {
+    background-color: darkred;
+}
+  
