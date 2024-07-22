@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 from .models import Album
 from reviews.serializers import ReviewsSerializer
-
 class AlbumSerializers(serializers.ModelSerializer):
      reviews = ReviewsSerializer(many=True, read_only=True)
      class Meta:
