@@ -46,9 +46,9 @@ const ArtistPage = ({ artist, albums }) => {
     }
 
     // Filtra os álbuns que pertencem ao artista
-    const artistAlbums = albums.filter(album => album.album_artist_id === artist.artist_id);
+    const artistAlbums = albums.filter(album => album.album_artist === artist.artist_id);
     
-    return (
+    return (    
         <div>
             <header id='header'>
                 <a href={`http://localhost:3000/`}>
@@ -57,6 +57,18 @@ const ArtistPage = ({ artist, albums }) => {
                 <div id='searchbar'>
                     <input id='search-input' placeholder="O que vamos ouvir hoje?" />
                 </div>
+                <a href="/register" id="user-icon-link">
+                    <svg
+                    id="user-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="50"
+                    fill="white"
+                    viewBox="0 0 16 16"
+                    >
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+                </a>
             </header>
             <div id='content'>
                 <div id='artist-page-details'>
@@ -70,6 +82,10 @@ const ArtistPage = ({ artist, albums }) => {
                         <h1 id='artist-page-title'>{artist.artist_name}</h1>
                         <br />
                         <p>{artist.artist_description}</p>
+                    </div>
+                    <div id='topics'>
+                        <h2 className='topic'>Albums</h2>
+                        <hr className='topic'></hr>
                     </div>
                     <div id='artist-albums'>
                         {artistAlbums.length === 0 ? (

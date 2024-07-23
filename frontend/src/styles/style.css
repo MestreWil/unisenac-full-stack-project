@@ -107,7 +107,16 @@ body {
 
 .album-artist {
     font-size: 14px;
-    color: gray;
+}
+
+.album-artist a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.album-artist a:hover{
+    color: #b8b8b8;
 }
 
 #filter-buttons {
@@ -196,6 +205,19 @@ hr{
     color: black;
 }
 
+#album-page-info h2{
+    margin-top: -20px;
+}
+
+#album-page-info a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+#album-page-info a:hover {
+    color: #b8b8b8;
+}
+
 #album-page-title {
     font-size: 48px;
 }
@@ -276,6 +298,8 @@ hr{
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: -30px;
+    border: 5px solid red;
 }
 
 #artist-page-title {

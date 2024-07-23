@@ -3,23 +3,39 @@ import React from 'react';
 // Função para buscar os dados
 export async function getStaticProps() {
   try {
-    const response = await fetch('http://localhost:8000/album/');
+    const albumResponse = await fetch('http://localhost:8000/album/');
+    const artistResponse = await fetch('http://localhost:8000/artists/');
 
-    if (!response.ok) {
-      console.error(`HTTP error! status: ${response.status}`);
+    if (!albumResponse.ok) {
+      console.error(`HTTP error! status: ${albumResponse.status}`);
       return {
         props: {
           albums: [],
+          artists: [],
         },
       };
     }
 
-    const data = await response.json();
-    console.log('Data fetched from API:', data);
+    if (!artistResponse.ok) {
+      console.error(`HTTP error! status: ${artistResponse.status}`);
+      return {
+        props: {
+          albums: [],
+          artists: [],
+        },
+      };
+    }
+
+    const albumData = await albumResponse.json();
+    const artistData = await artistResponse.json();
+
+    console.log('Album data fetched from API:', albumData);
+    console.log('Artist data fetched from API:', artistData);
 
     return {
       props: {
-        albums: data,
+        albums: albumData,
+        artists: artistData
       },
     };
   } catch (error) {
@@ -28,6 +44,7 @@ export async function getStaticProps() {
     return {
       props: {
         albums: [],
+        artists: []
       },
     };
   }
@@ -58,7 +75,7 @@ export const Header = () => {
 };
 
 // Componente da Página Principal
-const AlbumsPage = ({ albums }) => {
+const AlbumsPage = ({ albums, artists }) => {
   return (
     <div id='corpo'>
       <Header />
@@ -75,22 +92,28 @@ const AlbumsPage = ({ albums }) => {
         <p id="no-albums">Nenhum álbum encontrado.</p>
       ) : (
         <div className='grid-container'>
-          {albums.map((album, index) => (
-            <div className='grid-item' key={index}>
-              {album.album_image && (
-                <div className='album-image'>
-                  <a href={`/album/${encodeURIComponent(album.album_name)}`}>
-                    <img 
-                      src={`http://localhost:8000${album.album_image}`}  
-                      alt={`Imagem do álbum ${album.album_name}`} 
-                    />
-                  </a>
-                </div>
-              )}
-              <h2 className='album-title'><a href={`/album/${encodeURIComponent(album.album_name)}`}>{album.album_name}</a></h2>
-              <p className='album-artist'>{album.artist_name}</p> {/* Adicione o nome do artista aqui */}
-            </div>
-          ))}
+          {albums.map((album, index) => {
+            const albumArtist = artists.find(artist => artist.artist_id === album.album_artist);
+            const artistLink = albumArtist.artist_name;
+            return (
+              <div className='grid-item' key={index}>
+                {album.album_image && (
+                  <div className='album-image'>
+                    <a href={`/album/${encodeURIComponent(album.album_name)}`}>
+                      <img 
+                        src={`http://localhost:8000${album.album_image}`}  
+                        alt={`Imagem do álbum ${album.album_name}`} 
+                      />
+                    </a>
+                  </div>
+                )}
+                <h2 className='album-title'>
+                  <a href={`/album/${encodeURIComponent(album.album_name)}`}>{album.album_name}</a>
+                </h2>
+                <p className='album-artist'><a href={`http://localhost:3000/artist/${artistLink.replace(' ', '%20')}`}>{albumArtist ? albumArtist.artist_name : 'Artista desconhecido'}</a></p>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
