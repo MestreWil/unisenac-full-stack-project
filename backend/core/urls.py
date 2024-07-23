@@ -8,5 +8,6 @@ urlpatterns = [
     path('genders/', include('gender.urls'), name='gender_urls'),
     path('users/', include('users.urls'), name='users_urls'),
     path('artists/', include('artist.urls'), name='artist_urls'),
-    path('album/', include('album.urls'), name='album-urls')
+    path('album/', include('album.urls'), name='album-urls'),
+    path('reviews/', include('reviews.urls'), name='reviews-urls')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
