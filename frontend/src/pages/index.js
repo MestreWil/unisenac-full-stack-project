@@ -68,7 +68,7 @@ const AlbumsPage = ({ albums }) => {
         <div className='filter-button'><a href='http://localhost:3000/genres'>Genres</a></div>
       </div>
       <div id='topics'>
-        <h2 className='topic'>New Albums</h2>
+        <h2 className='topic'>Albums</h2>
         <hr className='topic'></hr>
       </div>
       {albums.length === 0 ? (
