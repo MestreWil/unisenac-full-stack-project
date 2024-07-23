@@ -42,6 +42,10 @@ def post_user(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
      return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+def login_user(request):
+     pass
+
 @api_view(['PATCH'])
 def patch_user_description(request, name):
      try:
