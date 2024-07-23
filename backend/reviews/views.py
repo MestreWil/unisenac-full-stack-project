@@ -31,3 +31,29 @@ def create_review(request):
           serializer.save()
           return Response(serializer.data, status=status.HTTP_201_CREATED)
      return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PATCH'])
+def alter_review(request, rev_id):
+     try:
+          review = Reviews.objects.get(pk=rev_id)
+     except Reviews.DoesNotExist():
+          msg = {"msg": "User Not found"}
+          return Response(msg, status=status.HTTP_404_NOT_FOUND)
+     
+     serializer = ReviewsSerializer(review, data=request.data, partial=True)
+     if serializer.is_valid():
+          serializer.save()
+          return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
+     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+def delete_review(request, rev_id):
+     try:
+          delete_review = Reviews.objects.get(pk=rev_id)
+          delete_review.delete()
+          return Response(status=status.HTTP_202_ACCEPTED)
+     except:
+          return Response(status=status.HTTP_404_NOT_FOUND0)
+
+
+     
