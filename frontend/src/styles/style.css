@@ -86,7 +86,7 @@ body {
 
 .album-image img {
     width: 300px;
-    height: auto;
+    height: 300px;
     border-radius: 15px;
 }
 
@@ -271,12 +271,18 @@ hr{
 
 #artist-page-image img {
     display: block;
-    height: 300px;
-    width: 300px;
-    border-radius: 25px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #artist-page-title {
     text-align: center;
     margin-top: 30px;
+}
+
+#artist-page-info p {
+    text-align: center;
 }
