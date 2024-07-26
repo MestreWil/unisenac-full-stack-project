@@ -17,7 +17,7 @@ User page   |   Login Page
 
 Sign up Page  |   Artist Page
 :-------------------------:|:-------------------------:
-![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201403.png) |
+![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201403.png) | ![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20203301.png)
 
 
 ## Summary
