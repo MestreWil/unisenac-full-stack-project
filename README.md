@@ -9,6 +9,10 @@
 Home    |      Album Page
 :-------------------------:|:-------------------------:
 ![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201327.png) | ![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201310.png)
+User page   |   Login Page
+:-------------------------:|:-------------------------:
+![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201341.png) | ![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201352.png)
+
 
 ## Summary
 * [What is MusicRATE](#what-is-musicrate)
