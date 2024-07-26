@@ -14,11 +14,11 @@ User page   |   Login Page
 :-------------------------:|:-------------------------:
 ![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201341.png) | ![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201352.png)
 
-<p align="center">
-Sign up Page
-:-------------------------:
-![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201403.png)
-</p>
+
+Sign up Page  |   Artist Page
+:-------------------------:|:-------------------------:
+![](https://github.com/MestreWil/unisenac-full-stack-project/blob/main/shoots/Captura%20de%20tela%202024-07-26%20201403.png) |
+
 
 ## Summary
 * [What is MusicRATE](#what-is-musicrate)
