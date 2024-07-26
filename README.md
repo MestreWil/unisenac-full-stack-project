@@ -14,3 +14,26 @@
 
 ## What is MusicRATE?
 This project aims to provide a web platform where people can share their opinions about albums or artists, based on reviews and scores ranging from 0 to 5. Our idea is inspired by the IMDb website and our passion for listening to music. We are aware that there may be some bugs, so please feel free to explore the code and share any suggestions for improvements. 😉
+
+## How to install?
+
+1. Clone this repository with:
+```
+$ git clone https://github.com/MestreWil/unisenac-full-stack-project.git
+```
+
+## Tools
+* Django REST framework for backend: [Django-REST-framework](https://www.django-rest-framework.org/)
+* React with NextJs framework for frontend: [Nextjs](https://nextjs.org/)
+* PostgreSQL for Database: [PostgreSQL](https://www.postgresql.org/)
+* Postman to test API: [Postman](https://www.postman.com/)
+
+## Contact
+William Tavares de Moura - [LinkedIn](https://www.linkedin.com/in/william-tavares-de-moura/)
+
+Thiago Schiedeck Dias da Silveira - [LinkedIn](https://www.linkedin.com/in/thiago-schiedeck-dias-da-silveira-9943321b3/)
+
+Vitor Baldissera - [LinkedIn](https://www.linkedin.com/in/vitor-baldissera-b45819214/) 
+
+If you find any issue or just want to talk about the project, please contact with us!
+
