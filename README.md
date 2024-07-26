@@ -11,3 +11,6 @@
 * [Tools](#tools)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
+
+## What is MusicRATE?
+This project aims to provide a web platform where people can share their opinions about albums or artists, based on reviews and scores ranging from 0 to 5. Our idea is inspired by the IMDb website and our passion for listening to music. We are aware that there may be some bugs, so please feel free to explore the code and share any suggestions for improvements. 😉
