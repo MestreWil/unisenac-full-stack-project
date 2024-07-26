@@ -4,6 +4,11 @@
   </a>
 
 <h3 align="center">MusicRATE</h3>
+<br>
+
+Home    |      Album Page
+:-------------------------:|:-------------------------:
+
 
 ## Summary
 * [What is MusicRATE](#what-is-musicrate)
@@ -29,11 +34,11 @@ $ git clone https://github.com/MestreWil/unisenac-full-stack-project.git
 * Postman to test API: [Postman](https://www.postman.com/)
 
 ## Contact
-William Tavares de Moura - [LinkedIn](https://www.linkedin.com/in/william-tavares-de-moura/)
+William Tavares de Moura (Backend Developer) - [LinkedIn](https://www.linkedin.com/in/william-tavares-de-moura/)
 
-Thiago Schiedeck Dias da Silveira - [LinkedIn](https://www.linkedin.com/in/thiago-schiedeck-dias-da-silveira-9943321b3/)
+Thiago Schiedeck Dias da Silveira (Frontend Developer) - [LinkedIn](https://www.linkedin.com/in/thiago-schiedeck-dias-da-silveira-9943321b3/)
 
-Vitor Baldissera - [LinkedIn](https://www.linkedin.com/in/vitor-baldissera-b45819214/) 
+Vitor Baldissera (UX/UI Designer) - [LinkedIn](https://www.linkedin.com/in/vitor-baldissera-b45819214/) 
 
 If you find any issue or just want to talk about the project, please contact with us!
 
