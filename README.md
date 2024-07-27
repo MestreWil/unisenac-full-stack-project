@@ -31,10 +31,33 @@ Sign up Page  |   Artist Page
 This project aims to provide a web platform where people can share their opinions about albums or artists, based on reviews and scores ranging from 0 to 5. Our idea is inspired by the IMDb website and our passion for listening to music. We are aware that there may be some bugs, so please feel free to explore the code and share any suggestions for improvements. 😉
 
 ## How to install?
-
-1. Clone this repository with:
+Obs: 
+- At the moment, you need to have installed Postgre Database in your machine, and create a datababe called "MusicRATE" because we don't use Docker, sorry ☹️
+- You must have installed Python 3.10 interpreter or more recent version
+1. Run Backend:
 ```
-$ git clone https://github.com/MestreWil/unisenac-full-stack-project.git
+// Navigate to the backend folder
+$ cd backend
+
+// Create a venv (virtual environment to install dependencies)
+$ python -m venv venv
+
+// Activate venv
+$ ./venv/Scripts/activate
+
+// Install dependencies in your venv (please, look at your terminal to check if you in virtual environment)
+$ pip install -r requirements.txt
+
+// Create migrations
+$ python manage.py migrate
+
+// Create a super user to enter in admin panel
+$ python manage.py createsuperuser
+
+// RUN THE BACKEND
+$ python manage.py runserver
+
+// to enter in admin panel, just put /admin in the end of URL from the path
 ```
 
 ## Tools
