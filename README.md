@@ -59,6 +59,22 @@ $ python manage.py runserver
 
 // to enter in admin panel, just put /admin in the end of URL from the path
 ```
+2. Run Frontend:
+Obs:
+- You must have node 10 interpreter or more recent
+
+``` 
+// Navigate to the frontend folder:
+$ cd frontend
+
+// create a next project
+$ npx create-next-app 
+
+// RUN THE FRONTEND:
+$ npm run dev
+
+```
+
 
 ## Tools
 * Django REST framework for backend: [Django-REST-framework](https://www.django-rest-framework.org/)
