@@ -83,11 +83,11 @@ $ npm run dev
 * Postman to test API: [Postman](https://www.postman.com/)
 
 ## Contact
-William Tavares de Moura (Backend Developer) - [LinkedIn](https://www.linkedin.com/in/william-tavares-de-moura/)
+ - William Tavares de Moura (Backend Developer) - [LinkedIn](https://www.linkedin.com/in/william-tavares-de-moura/) | Email: williamtavaresdemoura@gmail.com 
 
-Thiago Schiedeck Dias da Silveira (Frontend Developer) - [LinkedIn](https://www.linkedin.com/in/thiago-schiedeck-dias-da-silveira-9943321b3/)
+ - Thiago Schiedeck Dias da Silveira (Frontend Developer) - [LinkedIn](https://www.linkedin.com/in/thiago-schiedeck-dias-da-silveira-9943321b3/) | Email: thiagosds1701@outlook.com
 
-Vitor Baldissera (UX/UI Designer) - [LinkedIn](https://www.linkedin.com/in/vitor-baldissera-b45819214/) 
+ - Vitor Baldissera (UX/UI Designer) - [LinkedIn](https://www.linkedin.com/in/vitor-baldissera-b45819214/) | Email: vitorbaldisseira@gmail.com
 
 If you find any issue or just want to talk about the project, please contact with us!
 
